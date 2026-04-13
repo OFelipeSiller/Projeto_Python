@@ -9,7 +9,7 @@ Seja bem vindo ao sistema de nota IFB
 \nDigite sua opção: """
     return (input(menu))   
 
-def cadastrar_aluno(alunos, nome):
+def cadastrar_aluno(alunos):
     nome = input("\nDigite o nome do aluno: ")
 
     aluno_existe = filtro_alunos(alunos, nome)
@@ -46,19 +46,19 @@ def calcular_media(n1, n2):
     media = (n1 + n2) / 2
     return media    
 
-def filtro_faltas(aluno, faltas):
-    if faltas > aluno['total_aulas'] * 0.25:
+def filtro_faltas(alunos, faltas):
+    if faltas > alunos['total_aulas'] * 0.25:
         return "Reprovado por faltas"
 
 def filtro_alunos(alunos, nome):
     aluno_exitente = [aluno for aluno in alunos if aluno["nome"] == nome]
     return aluno_exitente[0]['nome'] if aluno_exitente else None
 
-def calcular_notas(aluno):
+def calcular_notas(alunos):
 
-    if filtro_faltas(aluno, aluno['faltas']):
+    if filtro_faltas(alunos, alunos['faltas']):
         print("\nAluno reprovado por faltas. Não é possível adicionar notas.\n")
-        aluno['situacao'] = "Reprovado por faltas"
+        alunos['situacao'] = "Reprovado por faltas"
         return  
     else:
         print("\nDeseja inserir as notas de qual matéria?")
@@ -82,20 +82,20 @@ def calcular_notas(aluno):
 
             media_informatica = calcular_media(n1_informatica, n2_informatica)
 
-            aluno['notas']['informatica']['n1'] = n1_informatica
-            aluno['notas']['informatica']['n2'] = n2_informatica
-            aluno['notas']['informatica']['media'] = media_informatica
+            alunos['notas']['informatica']['n1'] = n1_informatica
+            alunos['notas']['informatica']['n2'] = n2_informatica
+            alunos['notas']['informatica']['media'] = media_informatica
 
             if media_informatica < 7.0:
                 situacao = "Reprovado por nota"
             else:
                 situacao = "Aprovado"
 
-            aluno['notas']['informatica']['situacao'] = situacao
+            alunos['notas']['informatica']['situacao'] = situacao
 
             print(f"\nMédia de informática: {media_informatica}\n")
             print(f"Nota 1: {n1_informatica}\nNota 2: {n2_informatica}")
-            print(f"Faltas: {aluno['faltas']}")
+            print(f"Faltas: {alunos['faltas']}")
             print("===========================================")
             print(f"Situação: {situacao}\n")
 
@@ -111,20 +111,20 @@ def calcular_notas(aluno):
 
             media_matematica = calcular_media(n1_matematica, n2_matematica)
 
-            aluno['notas']['matematica']['n1'] = n1_matematica
-            aluno['notas']['matematica']['n2'] = n2_matematica
-            aluno['notas']['matematica']['media'] = media_matematica
+            alunos['notas']['matematica']['n1'] = n1_matematica
+            alunos['notas']['matematica']['n2'] = n2_matematica
+            alunos['notas']['matematica']['media'] = media_matematica
 
             if media_matematica < 7.0:
                 situacao = "Reprovado por nota"
             else:
                 situacao = "Aprovado"
 
-            aluno['notas']['matematica']['situacao'] = situacao
+            alunos['notas']['matematica']['situacao'] = situacao
 
             print(f"\nMédia de matemática: {media_matematica}\n")
             print(f"Nota 1: {n1_matematica}\nNota 2: {n2_matematica}")
-            print(f"Faltas: {aluno['faltas']}")
+            print(f"Faltas: {alunos['faltas']}")
             print("===========================================")
             print(f"Situação: {situacao}\n")
 
@@ -141,20 +141,20 @@ def calcular_notas(aluno):
 
                 media_fisica = calcular_media(n1_fisica, n2_fisica)
 
-                aluno['notas']['fisica']['n1'] = n1_fisica
-                aluno['notas']['fisica']['n2'] = n2_fisica
-                aluno['notas']['fisica']['media'] = media_fisica
+                alunos['notas']['fisica']['n1'] = n1_fisica
+                alunos['notas']['fisica']['n2'] = n2_fisica
+                alunos['notas']['fisica']['media'] = media_fisica
 
                 if media_fisica < 7.0:
                     situacao = "Reprovado por nota"
                 else:
                     situacao = "Aprovado"
 
-                aluno['notas']['fisica']['situacao'] = situacao
+                alunos['notas']['fisica']['situacao'] = situacao
 
                 print(f"\nMédia de física: {media_fisica}\n")
                 print(f"Nota 1: {n1_fisica}\nNota 2: {n2_fisica}")
-                print(f"Faltas: {aluno['faltas']}")
+                print(f"Faltas: {alunos['faltas']}")
                 print("===========================================")
                 print(f"Situação: {situacao}\n")
 
