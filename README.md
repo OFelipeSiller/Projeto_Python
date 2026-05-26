@@ -1,4 +1,4 @@
-# Projeto Python - Cadastro de Disciplinas
+# Projeto Python - Projeto - Sistema de gestão de notas e faltas de estudantes
 
 ## 📚 Sobre o projeto
 Este projeto foi desenvolvido em Python como parte de uma atividade acadêmica, com o objetivo de aplicar conceitos fundamentais da linguagem, como:
