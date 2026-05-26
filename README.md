@@ -40,3 +40,36 @@ Projeto_Python/
     ├── Etapa_5.py
     ├── Etapa_6.py
     └── Etapa_7_Projeto-Final.py
+
+Cada arquivo representa uma etapa da evolução do projeto, desde versões iniciais até a implementação final.
+```
+▶ Como executar
+1. Clone o repositório
+git clone https://github.com/OFelipeSiller/Projeto_Python.git
+2. Acesse a pasta
+cd Projeto_Python/Trabalho\ python
+3. Execute o projeto final
+python Etapa_7_Projeto-Final.py
+
+📖 Conceitos aplicados
+Variáveis;
+
+Condicionais (if/else);
+
+Laços de repetição (while, for);
+
+Listas;
+
+Funções;
+
+Validação de entrada;
+
+Boas práticas de organização de código;
+
+
+## 👨‍💻 Desenvolvedores:
+
+Felipe Siller Cavalcante,
+Patrícia Liane,
+Carlos Felipe Spindula Gomes,
+André Pereira de Almeida.
